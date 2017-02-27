@@ -12,7 +12,7 @@ ForEach($game in $currentRound.Games){
 
 
     if($homeLength -lt $awayLength){
-        if($game.MatchId -eq 2){
+        if($game.IsMarginGame){
             $tips += [pscustomobject]@{
                 "MatchId" = $game.MatchId
                 "TeamId" = $game.Away.TeamId
@@ -26,7 +26,7 @@ ForEach($game in $currentRound.Games){
                 }
             }
     }else{
-        if($game.MatchId -eq 2){
+        if($game.IsMarginGame){
             $tips += [pscustomobject]@{
                 "MatchId" = $game.MatchId
                 "TeamId" = $game.Home.TeamId
